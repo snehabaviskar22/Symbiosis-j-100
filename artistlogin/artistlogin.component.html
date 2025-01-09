@@ -1,0 +1,34 @@
+<div class="container">
+  <header>
+      <h1>Login to Artist Marketplace : Share Your Art with the World!</h1>
+      <p class="tagline">Access your account to explore and manage your artworks.</p>
+  </header>
+
+  <section class="login-form">
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" class="form-control" required [(ngModel)]="artist.email" name="email" 
+                     #email="ngModel" email pattern=".+@gmail\.com$">
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                  <div *ngIf="email.errors?.['required']">Email is required.</div>
+                  <div *ngIf="email.errors?.['email']">Invalid email format.</div>
+                  <div *ngIf="email.errors?.['pattern']">Email must be a Gmail address.</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" class="form-control" required [(ngModel)]="artist.password" name="password" 
+                     #password="ngModel" minlength="5" maxlength="15">
+              <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+                  <div *ngIf="password.errors?.['required']">Password is required.</div>
+                  <div *ngIf="password.errors?.['minlength']">Password must be at least 5 characters long.</div>
+                  <div *ngIf="password.errors?.['maxlength']">Password cannot be more than 15 characters long.</div>
+              </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+      </form>
+      <p class="footer-text">Don't have an account? <a routerLink="/artistsignup">Sign Up</a></p>
+      <p class="go-home"><a href="/home">Go back to Home</a></p>
+  </section>
+</div>

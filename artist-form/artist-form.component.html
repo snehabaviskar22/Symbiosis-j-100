@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Artist Details Form</h2>
+  <h3>We will use this to create your profile</h3>
+  <form (ngSubmit)="onSubmit()" #artistForm="ngForm">
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" type="text" [(ngModel)]="artistFormModel.name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="artStyle">Art Style:</label>
+      <input id="artStyle" type="text" [(ngModel)]="artistFormModel.artStyle" name="artStyle" required />
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input id="location" type="text" [(ngModel)]="artistFormModel.location" name="location" required />
+    </div>
+
+    <div class="form-group">
+      <label for="medium">Medium:</label>
+      <input id="medium" type="text" [(ngModel)]="artistFormModel.medium" name="medium" required />
+    </div>
+
+    <div class="form-group">
+      <label for="bio">Bio:</label>
+      <textarea id="bio" rows="4" [(ngModel)]="artistFormModel.bio" name="bio" required></textarea>
+    </div>
+
+    <button type="submit" >Submit</button>
+  </form>
+</div>

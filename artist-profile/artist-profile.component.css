@@ -1,0 +1,83 @@
+.header {
+  background-color: #8ab4f8; /* Light blue for header */
+  color: #1a237e; /* Dark blue for text */
+  padding: 10px 0;
+}
+
+.header nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center; /* Center the nav items */
+}
+
+.header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.artist-profile {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #90caf9; /* Light blue border */
+  border-radius: 8px;
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.artist-profile h1 {
+  color: #1a237e; /* Dark blue for artist name */
+}
+
+.artist-profile p {
+  color: #555; /* Dark gray for text */
+}
+
+.artist-profile input {
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%; /* Full width */
+  margin-top: 5px; /* Space above input */
+}
+
+.save-button {
+  background-color: #42a5f5; /* Bright blue for button */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Space above button */
+}
+
+.save-button:hover {
+  background-color: #2196f3; /* Darker blue on hover */
+}
+
+.footer {
+  background-color: #8ab4f8; /* Light blue for footer */
+  color: #1a237e; /* Dark blue for text */
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.footer nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer nav ul li a {
+  color: #1a237e; /* Dark blue for footer links */
+  text-decoration: none;
+}
+
+.footer nav ul li a:hover {
+  text-decoration: underline; /* Underline on hover */
+}

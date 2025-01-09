@@ -1,0 +1,64 @@
+<div class="container">
+    <header>
+        <h1>Artist Dashboard</h1>
+        <p class="tagline">Manage your artworks and connect with your audience.</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/under-development">My Artworks</a></li>
+                <li><a href="/under-development">Orders</a></li>
+                <li><a href="/artist-profile">Profile</a></li>
+                <li><button (click)="onLogout()" class="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+  
+    <section class="hero">
+        <h2>Welcome</h2>
+        <p *ngIf="!profileExists">Start adding your artworks by creating your profile .</p>
+        <p>Create your Profile, if its not already created.</p>
+        <a *ngIf="!profileExists" class="cta-button" href="/artist-form">Create your Profile.</a>
+    </section>
+  
+    <div class="artwork-management">
+        <h2>Your Artworks</h2>
+        <ul class="artwork-list">
+            <li *ngFor="let artwork of artworks">
+                <a [routerLink]="['/artwork', formatTitleForUrl(artwork.title)]">{{ artwork.title }}</a>
+                <p>Status: Available</p>
+                <img [src]="artwork.imageUrl" alt="{{ artwork.title }}" />
+                <p>{{ artwork.description }}</p>
+            </li>
+        </ul>
+        <a class="cta-button" href="/under-development">View All Artworks</a>
+    </div>
+  
+    <div class="orders">
+        <h2>Your Orders</h2>
+        <ul class="order-list">
+            <li>
+                <a href="/order/1">Order #1</a>
+                <p>Status: Completed</p>
+            </li>
+            <li>
+                <a href="/order/2">Order #2</a>
+                <p>Status: Shipped</p>
+            </li>
+            <li>
+                <a href="/order/3">Order #3</a>
+                <p>Status: Pending</p>
+            </li>
+        </ul>
+        <a class="cta-button" href="/under-development">View All Orders</a>
+    </div>
+  
+    <footer>
+      <nav>
+          <ul class="footer-links">
+              <li><a href="/contactus">Contact Us</a></li>
+              <li><a href="/feedback">Feedback</a></li>
+          </ul>
+      </nav>
+        <p>&copy; 2024 Artist Marketplace. All rights reserved.</p>
+    </footer>
+</div>

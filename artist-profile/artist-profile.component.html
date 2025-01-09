@@ -1,0 +1,35 @@
+<!-- Header Section -->
+<header class="header">
+  <nav>
+    <ul>
+      <li><a href="/artistdashboard">Back</a></li>
+      <li><a href="/add-artworks">Add Artworks</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Artist Profile Section -->
+<div class="artist-profile" *ngIf="artist">
+  <h1>{{ artist?.name }}</h1>
+  <p><strong>Email:</strong> <input type="email" [(ngModel)]="artist.email" /></p>
+  <p><strong>Location:</strong> {{ artist?.location }}</p>
+  <p><strong>Medium:</strong> {{ artist?.medium }}</p>
+  <p><strong>Bio:</strong> {{ artist?.bio }}</p>
+  <p><strong>Art Style:</strong> {{ artist?.artStyle }}</p>
+  <button class="save-button" (click)="saveChanges()">Save Changes</button>
+  <a class="edit-button" routerLink="/edit-artist/{{ artist?.id }}">Edit Profile</a>
+</div>
+<div *ngIf="!artist">
+  <p>Loading artist details...</p>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <nav>
+    <ul>
+      <li><a href="/aboutus">About Us</a></li>
+      <li><a href="/contactus">Contact Us</a></li>
+      <li><a href="/feedback">Feedback</a></li>
+    </ul>
+  </nav>
+</footer>

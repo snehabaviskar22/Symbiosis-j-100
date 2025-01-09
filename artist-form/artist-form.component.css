@@ -1,0 +1,81 @@
+/* Container styling */
+.container {
+    max-width: 600px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Heading styling */
+  h2 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Dark gray color for the heading */
+    margin-bottom: 10px; /* Space below the heading */
+  }
+  
+  h3 {
+    text-align: center; /* Center the subheading */
+    color: #666; /* Medium gray color for the subheading */
+    margin-bottom: 20px; /* Space below the subheading */
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 15px; /* Space between form groups */
+  }
+  
+  /* Label styling */
+  label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold text for labels */
+    color: #555; /* Medium gray color for labels */
+  }
+  
+  /* Input and textarea styling */
+  input, textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+  }
+  
+  /* Input focus styling */
+  input:focus, textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Button styling */
+  button {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside button */
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  /* Button hover styling */
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px; /* Reduce padding on smaller screens */
+    }
+  
+    button {
+      font-size: 14px; /* Smaller font size for buttons on smaller screens */
+    }
+  }

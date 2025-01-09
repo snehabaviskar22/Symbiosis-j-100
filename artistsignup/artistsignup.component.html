@@ -1,0 +1,44 @@
+<div class="container">
+  <header>
+      <h1>Sign Up for Artist Marketplace: Share Your Art with the World!</h1>
+      <p class="tagline">Join our community of artists and start selling your art!</p>
+  </header>
+
+  <section class="signup-form">
+      <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+          <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" class="form-control" required [(ngModel)]="artist.name" name="name" 
+                     #name="ngModel" minlength="2" pattern="^[A-Za-z\s]+$">
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+                  <div *ngIf="name.errors?.['required']">Name is required.</div>
+                  <div *ngIf="name.errors?.['minlength']">Name must be at least 2 characters long.</div>
+                  <div *ngIf="name.errors?.['pattern']">Name cannot include numbers.</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" class="form-control" required [(ngModel)]="artist.email" name="email" 
+                     #email="ngModel" email pattern=".+@gmail\.com$">
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                  <div *ngIf="email.errors?.['required']">Email is required.</div>
+                  <div *ngIf="email.errors?.['email']">Invalid email format.</div>
+                  <div *ngIf="email.errors?.['pattern']">Email must be a Gmail address.</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" class="form-control" required [(ngModel)]="artist.password" name="password" 
+                     #password="ngModel" minlength="5" maxlength="15">
+              <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+                  <div *ngIf="password.errors?.['required']">Password is required.</div>
+                  <div *ngIf="password.errors?.['minlength']">Password must be at least 5 characters long.</div>
+                  <div *ngIf="password.errors?.['maxlength']">Password cannot be more than 15 characters long.</div>
+              </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Signup</button>
+      </form>
+      <p class="footer-text">Already have an account? <a href="/artistlogin">Login</a></p>
+      <p class="go-home"><a href="/home">Go back to Home</a></p>
+  </section>
+</div>

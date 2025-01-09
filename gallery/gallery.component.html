@@ -1,0 +1,24 @@
+<header class="header">
+    <nav>
+      <h1>Artworks Gallery</h1>
+    </nav>
+  </header>
+  
+  <div class="gallery-container">
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let artwork of artworks">
+        <img [src]="artwork.url" [alt]="artwork.title" />
+        <h2>{{ artwork.title }}</h2>
+        <p class="price">₹{{ artwork.price }}</p>
+        <button class="buy-button" routerLink="/under-development">Buy</button>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <nav>
+      <a routerLink="/aboutus">About Us</a>
+      <a routerLink="/contactus">Contact Us</a>
+      <a routerLink="/feedback">Feedback</a>
+    </nav>
+  </footer>
